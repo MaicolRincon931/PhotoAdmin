@@ -1,0 +1,46 @@
+/** Media Queries **/
+.error {
+  background-color: red !important;
+  font-size: 2rem;
+}
+
+.user {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: gray;
+  background-color: #4e73df;
+  padding: 0.5rem;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 0.5rem;
+}
+.user i {
+  padding-right: 0.3rem;
+}
+.user:hover {
+  text-decoration: none;
+  background-color: #2653d4;
+  color: #FFFFFF;
+}
+
+.logout {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: gray;
+  background-color: #e74a3b;
+  padding: 0.5rem;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 0.5rem;
+}
+.logout i {
+  padding-right: 0.3rem;
+}
+.logout:hover {
+  text-decoration: none;
+  background-color: #d52a1a;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=app.css.map */
