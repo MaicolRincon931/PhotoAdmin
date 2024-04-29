@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Model\ActiveRecord;
+use Model\Usuario;
 use MVC\Router;
 
 class UsuariosController{
@@ -12,11 +13,11 @@ class UsuariosController{
         //Comprobar que este logeado
         $logeado=isLogin();
         
-        
-
+        $usuarios = Usuario::all();
         // Render a la vista 
         $router->render('usuarios/index', [
-            'titulo' => 'Usuarios'
+            'titulo' => 'Usuarios',
+            'usuarios' => $usuarios
         ]);
     }
 }

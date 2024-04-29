@@ -46,3 +46,25 @@
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
 }
+
+@mixin boton-sm($bgColor, $colorTexto){
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: gray;
+
+   background-color: $bgColor;
+   padding: 0.5rem;
+   color: darken($colorTexto,5%);
+   border: none;
+   border-radius: .5rem;
+   i{
+    padding-right: 0.3rem;
+   }
+
+   &:hover{
+    text-decoration: none;
+    background-color: darken($bgColor, 10%);
+    color: $colorTexto;
+   }
+}

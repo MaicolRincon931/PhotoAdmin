@@ -20,14 +20,13 @@
                         <li class="mr-4"><?php echo $titulo; ?></li>
                         <li class="mr-4"><?php echo date('d/F'); ?></li>
                         <li class="mr-4">
-                           <a href="" class="user">
+                           <a href="" class="usuario">
                            <i class="fa-regular fa-user"></i>
                             <?php echo $_SESSION['nombre']; ?>
                            </a>
                         </li>
                         <li class="mr-4" >
-                        
-                            <a href="#" class="logout">
+                            <a href="/logout" class="logout">
                             <i class="fa-solid fa-right-from-bracket"></i>    
                             Salir</a>
                         </li>
