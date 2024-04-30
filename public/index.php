@@ -36,6 +36,7 @@ $router->get('/mensaje',[AuthController::class, 'mensaje']);
 
 //Usuarios Routing
 $router->get('/dashboard/usuarios',[UsuariosController::class, 'index']);
+$router->post('/dashboard/usuarios',[UsuariosController::class, 'index']);
 
 $router->get('/dashboard', [DashboardController::class, 'index']);
 

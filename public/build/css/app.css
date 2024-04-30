@@ -86,4 +86,13 @@
   display: flex;
   justify-content: center;
 }
+
+.formulario-registro .border-left-danger,
+.formulario-registro .border-left-success {
+  margin-top: 0.5rem;
+}
+.formulario-registro .border-left-danger .card-body,
+.formulario-registro .border-left-success .card-body {
+  padding: 0.5rem;
+}
 /*# sourceMappingURL=app.css.map */

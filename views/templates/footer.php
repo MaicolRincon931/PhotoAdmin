@@ -16,3 +16,11 @@
     <!-- Page level custom scripts -->
     <script src="/extras/js/demo/chart-area-demo.js"></script>
     <script src="/extras/js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Page level plugins -->
+    <script src="/extras/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/extras/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/extras/js/demo/datatables-demo.js"></script>

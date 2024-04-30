@@ -21,3 +21,10 @@ function isLogin(): bool{
     }
 
 }
+
+function isNivel($nivel){
+
+    if($_SESSION['nivel']<=$nivel){
+        header('Location: /dashboard');
+    }
+}

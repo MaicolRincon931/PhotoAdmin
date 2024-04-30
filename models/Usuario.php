@@ -23,7 +23,7 @@ class Usuario extends ActiveRecord {
         $this->password = $args['password'] ?? '';
         $this->token = $args['token'] ?? '';
         $this->celular = $args['celular'] ?? '';
-        $this->nivel = $args['nivel'] ?? 1;
+        $this->nivel = $args['nivel'] ?? null;
         $this->nro_ventas = $args['nro_ventas'] ?? 0;
       
     }
@@ -70,5 +70,20 @@ class Usuario extends ActiveRecord {
     // Hashea el password
     public function hashPassword() : void {
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+
+    //Valida los campos del nuevo Usuario
+    public function validarNuevoUsuario(){
+        if(!$this->nombre){
+            self::$alertas['error'][] = 'Error. El nombre es obligatorio';
+        }
+        if(!$this->correo){
+            self::$alertas['error'][] = 'Error. El correo es obligatorio';
+        }
+        if(!$this->nivel){
+            self::$alertas['error'][] = 'Error. El nivel es obligatorio';
+        }
+
+        return self::$alertas;
     }
 }
