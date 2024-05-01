@@ -19,7 +19,7 @@ class UsuariosController
         isNivel(4);
 
         $user = new Usuario;
-        $guardado =false;
+        $guardado = false;
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -42,8 +42,50 @@ class UsuariosController
                     $resultado =  $user->guardar();
 
                     if ($resultado) {
-                        $user = new Usuario;                        
+                        $user = new Usuario;
                         $alertas['exito'][] = 'Usuario Registrado con Éxito';
+                    }
+                }
+            }
+        }
+
+        $usuarios = Usuario::all();
+        // Render a la vista 
+        $router->render('usuarios/index', [
+            'titulo' => 'Usuarios',
+            'usuarios' => $usuarios,
+            'alertas' => $alertas,
+            'user' => $user
+        ]);
+    }
+
+
+    public static function editar(Router $router)
+    {
+        //Comprobar que este logeado
+        $logeado = isLogin();
+
+        //Comprobar su nivel de acceso
+        isNivel(4);
+
+        $alertas = [];
+        $usuario = new Usuario;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $usuario = Usuario::where('id', $_POST['id']);
+            $usuario->sincronizar($_POST);
+
+            $user = Usuario::where('correo', $usuario->correo);
+
+            if($user){
+                if ($user->id !== $usuario->id) {
+                    $alertas['error'][] = 'El correo no puede ser el mismo entre Usuarios';
+                } else {
+                    $resultado = $usuario->guardar();
+    
+                    if ($resultado) {
+                        header('Location: /dashboard/usuarios');
                     }
                 }
             }

@@ -38,6 +38,9 @@ $router->get('/mensaje',[AuthController::class, 'mensaje']);
 $router->get('/dashboard/usuarios',[UsuariosController::class, 'index']);
 $router->post('/dashboard/usuarios',[UsuariosController::class, 'index']);
 
+//Editar Usuario
+$router->post('/dashboard/usuarios/editar',[UsuariosController::class, 'editar']);
+
 $router->get('/dashboard', [DashboardController::class, 'index']);
 
 $router->comprobarRutas();
